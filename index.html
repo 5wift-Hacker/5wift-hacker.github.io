@@ -22,6 +22,7 @@
       flex-direction: column;
       gap: 15px;
       box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+      z-index: 10;
     }
 
     .sidebar a {
@@ -33,6 +34,7 @@
       text-align: center;
       transition: all 0.3s ease;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      font-weight: bold;
     }
 
     .sidebar a:hover {
@@ -45,23 +47,72 @@
       flex: 1;
       padding: 40px;
       position: relative;
+      overflow: hidden;
     }
 
-    .app-content {
+    /* Intro (shown by default) */
+    .intro {
+      font-family: Helvetica, sans-serif;
+      font-weight: bold;
+      text-align: left;
+      max-width: 600px;
+    }
+    .intro h1 {
+      margin: 0 0 10px;
+      font-size: 2.5rem;
+    }
+    .intro h2 {
+      margin: 0 0 30px;
+      font-size: 1.5rem;
+      color: #555;
+    }
+    .intro .links a {
+      display: inline-block;
+      margin: 5px 10px 5px 0;
+      text-decoration: none;
+      font-family: "Courier New", monospace;
+      font-size: 1rem;
+      color: #2c3e50;
+      border: 1px solid #2c3e50;
+      padding: 5px 15px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+    .intro .links a:hover {
+      background: #2c3e50;
+      color: white;
+    }
+
+    /* Hidden app/about content */
+    .content-section {
       display: none;
       position: absolute;
-      top: 40px;
-      left: 20px;
-      right: 20px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 30px;
       background: white;
-      padding: 20px;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      overflow-y: auto;
     }
 
-    /* Show on hover */
-    .sidebar a:hover + .app-content,
-    .app-content:hover {
+    .content-section h2 {
+      margin-top: 0;
+    }
+
+    /* Show correct section on hover */
+    .sidebar a:hover ~ .main .intro {
+      display: none;
+    }
+    .sidebar a[data-target="app1"]:hover ~ .main #app1,
+    .sidebar a[data-target="app2"]:hover ~ .main #app2,
+    .sidebar a[data-target="app3"]:hover ~ .main #app3,
+    .sidebar a[data-target="app4"]:hover ~ .main #app4,
+    .sidebar a[data-target="app5"]:hover ~ .main #app5,
+    .sidebar a[data-target="app6"]:hover ~ .main #app6,
+    .sidebar a[data-target="about"]:hover ~ .main #about {
       display: block;
     }
   </style>
@@ -70,25 +121,67 @@
 
   <!-- Sidebar -->
   <nav class="sidebar">
-    <a href="#">App 1</a><div class="app-content"><h2>App 1</h2><p>Description here...</p></div>
-    <a href="#">App 2</a><div class="app-content"><h2>App 2</h2><p>Description here...</p></div>
-    <a href="#">App 3</a><div class="app-content"><h2>App 3</h2><p>Description here...</p></div>
-    <a href="#">App 4</a><div class="app-content"><h2>App 4</h2><p>Description here...</p></div>
-    <a href="#">App 5</a><div class="app-content"><h2>App 5</h2><p>Description here...</p></div>
-    <a href="#">App 6</a><div class="app-content"><h2>App 6</h2><p>Description here...</p></div>
-    <a href="#contact">Contact</a>
+    <a href="#" data-target="app1">App 1</a>
+    <a href="#" data-target="app2">App 2</a>
+    <a href="#" data-target="app3">App 3</a>
+    <a href="#" data-target="app4">App 4</a>
+    <a href="#" data-target="app5">App 5</a>
+    <a href="#" data-target="app6">App 6</a>
+    <a href="#" data-target="about">About</a>
   </nav>
 
   <!-- Main -->
   <div class="main">
-    <h1>Welcome to My Portfolio</h1>
-    <p>Hover over apps on the left to preview them.</p>
+    <!-- Default intro -->
+    <div class="intro">
+      <h1>John Newman,</h1>
+      <h2>iOS Developer</h2>
+      <div class="links">
+        <a href="mailto:John.newman920@icloud.com">Email</a>
+        <a href="https://github.com/5wift-Hacker" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/jnewmandev" target="_blank">LinkedIn</a>
+      </div>
+    </div>
 
-    <div id="contact" class="contact">
-      <h2>Get in Touch</h2>
-      <p>Email: <a href="mailto:John.newman920@icloud.com">John.newman920@icloud.com</a></p>
-      <p>GitHub: <a href="https://github.com/5wift-Hacker" target="_blank">5wift-Hacker</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/jnewmandev" target="_blank">John Newman</a></p>
+    <!-- About section -->
+    <div id="about" class="content-section">
+      <h2>About Me</h2>
+      <p>
+        I’m John Newman, an iOS developer passionate about building apps with Swift and SwiftUI. 
+        I love creating projects that balance clean design with practical functionality. 
+        This portfolio showcases some of my app work.
+      </p>
+    </div>
+
+    <!-- App sections -->
+    <div id="app1" class="content-section">
+      <h2>App 1</h2>
+      <p>Description of App 1 goes here.</p>
+    </div>
+
+    <div id="app2" class="content-section">
+      <h2>App 2</h2>
+      <p>Description of App 2 goes here.</p>
+    </div>
+
+    <div id="app3" class="content-section">
+      <h2>App 3</h2>
+      <p>Description of App 3 goes here.</p>
+    </div>
+
+    <div id="app4" class="content-section">
+      <h2>App 4</h2>
+      <p>Description of App 4 goes here.</p>
+    </div>
+
+    <div id="app5" class="content-section">
+      <h2>App 5</h2>
+      <p>Description of App 5 goes here.</p>
+    </div>
+
+    <div id="app6" class="content-section">
+      <h2>App 6</h2>
+      <p>Description of App 6 goes here.</p>
     </div>
   </div>
 </body>
