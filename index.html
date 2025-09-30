@@ -1,180 +1,95 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>John Newman | iOS Developer</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-  </head>
-  <body class="is-preload homepage">
-    <div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Newman Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background: #f9f9f9;
+    }
 
-      <!-- Header -->
-      <div id="header-wrapper">
-        <header id="header" class="container">
-          <div id="logo">
-            <h1><a href="index.html">John Newman</a></h1>
-            <span>iOS Developer • Swift & SwiftUI</span>
-          </div>
-          <nav id="nav">
-            <ul>
-              <li class="current"><a href="index.html">Home</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-        </header>
-      </div>
+    /* Sidebar */
+    .sidebar {
+      width: 200px;
+      background: #2c3e50;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    }
 
-      <!-- Banner -->
-      <div id="banner-wrapper">
-        <div id="banner" class="box container">
-          <div class="row">
-            <div class="col-7 col-12-medium">
-              <h2>Hi, I'm John Newman</h2>
-              <p>Freelance iOS Developer specializing in Swift & SwiftUI. I build apps for clients and personal portfolio projects.</p>
-            </div>
-            <div class="col-5 col-12-medium">
-              <ul>
-                <li><a href="#projects" class="button large icon solid fa-arrow-circle-right">View My Work</a></li>
-                <li><a href="#contact" class="button alt large icon solid fa-envelope">Get in Touch</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+    .sidebar a {
+      text-decoration: none;
+      color: white;
+      background: #34495e;
+      padding: 10px 15px;
+      border-radius: 50px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
 
-      <!-- Projects -->
-      <div id="features-wrapper">
-        <div class="container" id="projects">
-          <header>
-            <h2>Projects</h2>
-          </header>
+    .sidebar a:hover {
+      background: #1abc9c;
+      transform: translateX(5px);
+    }
 
-          <!-- First Row -->
-          <div class="row">
-            <div class="col-4 col-12-medium">
-              <section class="box feature">
-                <a href="#" class="image featured"><img src="images/app1.jpg" alt="App 1" /></a>
-                <div class="inner">
-                  <header>
-                    <h2>App One</h2>
-                    <p>Personal / Freelance</p>
-                  </header>
-                  <p>Brief description of what this app does and what technologies you used (Swift, SwiftUI, APIs, etc).</p>
-                </div>
-              </section>
-            </div>
+    /* Main area */
+    .main {
+      flex: 1;
+      padding: 40px;
+      position: relative;
+    }
 
-            <div class="col-4 col-12-medium">
-              <section class="box feature">
-                <a href="#" class="image featured"><img src="images/app2.jpg" alt="App 2" /></a>
-                <div class="inner">
-                  <header>
-                    <h2>App Two</h2>
-                    <p>Contract / Portfolio</p>
-                  </header>
-                  <p>Brief description of this project. Keep it short and clear, focusing on your role and tech stack.</p>
-                </div>
-              </section>
-            </div>
+    .app-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 20px;
+      right: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
 
-            <div class="col-4 col-12-medium">
-              <section class="box feature">
-                <a href="#" class="image featured"><img src="images/app3.jpg" alt="App 3" /></a>
-                <div class="inner">
-                  <header>
-                    <h2>App Three</h2>
-                    <p>Freelance / Portfolio</p>
-                  </header>
-                  <p>Another brief description here. Think of what problem the app solves and what tools you used.</p>
-                </div>
-              </section>
-            </div>
-          </div>
+    /* Show on hover */
+    .sidebar a:hover + .app-content,
+    .app-content:hover {
+      display: block;
+    }
+  </style>
+</head>
+<body>
 
-          <!-- Second Row -->
-          <div class="row">
-            <div class="col-4 col-12-medium">
-              <section class="box feature">
-                <a href="#" class="image featured"><img src="images/app4.jpg" alt="App 4" /></a>
-                <div class="inner">
-                  <header>
-                    <h2>App Four</h2>
-                    <p>Portfolio Project</p>
-                  </header>
-                  <p>Description of app four. Highlight your problem-solving and SwiftUI implementation here.</p>
-                </div>
-              </section>
-            </div>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <a href="#">App 1</a><div class="app-content"><h2>App 1</h2><p>Description here...</p></div>
+    <a href="#">App 2</a><div class="app-content"><h2>App 2</h2><p>Description here...</p></div>
+    <a href="#">App 3</a><div class="app-content"><h2>App 3</h2><p>Description here...</p></div>
+    <a href="#">App 4</a><div class="app-content"><h2>App 4</h2><p>Description here...</p></div>
+    <a href="#">App 5</a><div class="app-content"><h2>App 5</h2><p>Description here...</p></div>
+    <a href="#">App 6</a><div class="app-content"><h2>App 6</h2><p>Description here...</p></div>
+    <a href="#contact">Contact</a>
+  </nav>
 
-            <div class="col-4 col-12-medium">
-              <section class="box feature">
-                <a href="#" class="image featured"><img src="images/app5.jpg" alt="App 5" /></a>
-                <div class="inner">
-                  <header>
-                    <h2>App Five</h2>
-                    <p>Freelance Work</p>
-                  </header>
-                  <p>Description of app five. Mention any APIs, frameworks, or iOS features you integrated.</p>
-                </div>
-              </section>
-            </div>
+  <!-- Main -->
+  <div class="main">
+    <h1>Welcome to My Portfolio</h1>
+    <p>Hover over apps on the left to preview them.</p>
 
-            <div class="col-4 col-12-medium">
-              <section class="box feature">
-                <a href="#" class="image featured"><img src="images/app6.jpg" alt="App 6" /></a>
-                <div class="inner">
-                  <header>
-                    <h2>App Six</h2>
-                    <p>Contract / Client Work</p>
-                  </header>
-                  <p>Description of app six. Keep it concise, highlight your role and what makes this app unique.</p>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact -->
-      <!-- Contact -->
-<div id="footer-wrapper">
-  <footer id="footer" class="container">
-    <div class="row">
-      <div class="col-12">
-        <!-- Contact section now has the correct id -->
-        <section class="widget contact last" id="contact">
-          <h3>Contact Me</h3>
-          <p>Email: <a href="mailto:John.newman920@icloud.com">John.newman920@icloud.com</a></p>
-          <ul>
-            <li><a href="https://github.com/5wift-Hacker" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-            <li><a href="https://www.linkedin.com/in/jnewmandev" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-          </ul>
-        </section>
-      </div>
+    <div id="contact" class="contact">
+      <h2>Get in Touch</h2>
+      <p>Email: <a href="mailto:John.newman920@icloud.com">John.newman920@icloud.com</a></p>
+      <p>GitHub: <a href="https://github.com/5wift-Hacker" target="_blank">5wift-Hacker</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/jnewmandev" target="_blank">John Newman</a></p>
     </div>
-    <div class="row">
-      <div class="col-12">
-        <div id="copyright">
-          <ul class="menu">
-            <li>&copy; John Newman. All rights reserved.</li>
-            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-</div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+  </div>
+</body>
 </html>
-
