@@ -25,19 +25,20 @@
       z-index: 10;
     }
 
-    .sidebar a {
-      text-decoration: none;
-      color: white;
+    .sidebar button {
       background: #34495e;
+      border: none;
       padding: 10px 15px;
       border-radius: 50px;
+      color: white;
       text-align: center;
+      font-weight: bold;
+      cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-      font-weight: bold;
     }
 
-    .sidebar a:hover {
+    .sidebar button:hover {
       background: #1abc9c;
       transform: translateX(5px);
     }
@@ -50,25 +51,20 @@
       overflow: hidden;
     }
 
-    /* Intro (shown by default) */
+    /* Intro page */
     .intro {
       font-family: Helvetica, sans-serif;
       font-weight: bold;
       text-align: left;
       max-width: 600px;
     }
-    .intro h1 {
-      margin: 0 0 10px;
-      font-size: 2.5rem;
-    }
-    .intro h2 {
-      margin: 0 0 30px;
-      font-size: 1.5rem;
-      color: #555;
+    .intro h1, .intro h2 {
+      margin: 0 0 15px;
+      font-size: 1.8rem; /* Same size for both */
     }
     .intro .links a {
       display: inline-block;
-      margin: 5px 10px 5px 0;
+      margin: 5px 15px 5px 0;
       text-decoration: none;
       font-family: "Courier New", monospace;
       font-size: 1rem;
@@ -83,7 +79,7 @@
       color: white;
     }
 
-    /* Hidden app/about content */
+    /* Content sections */
     .content-section {
       display: none;
       position: absolute;
@@ -102,17 +98,8 @@
       margin-top: 0;
     }
 
-    /* Show correct section on hover */
-    .sidebar a:hover ~ .main .intro {
-      display: none;
-    }
-    .sidebar a[data-target="app1"]:hover ~ .main #app1,
-    .sidebar a[data-target="app2"]:hover ~ .main #app2,
-    .sidebar a[data-target="app3"]:hover ~ .main #app3,
-    .sidebar a[data-target="app4"]:hover ~ .main #app4,
-    .sidebar a[data-target="app5"]:hover ~ .main #app5,
-    .sidebar a[data-target="app6"]:hover ~ .main #app6,
-    .sidebar a[data-target="about"]:hover ~ .main #about {
+    /* JS will handle showing/hiding */
+    .active {
       display: block;
     }
   </style>
@@ -121,29 +108,29 @@
 
   <!-- Sidebar -->
   <nav class="sidebar">
-    <a href="#" data-target="app1">App 1</a>
-    <a href="#" data-target="app2">App 2</a>
-    <a href="#" data-target="app3">App 3</a>
-    <a href="#" data-target="app4">App 4</a>
-    <a href="#" data-target="app5">App 5</a>
-    <a href="#" data-target="app6">App 6</a>
-    <a href="#" data-target="about">About</a>
+    <button onclick="showSection('app1')">App 1</button>
+    <button onclick="showSection('app2')">App 2</button>
+    <button onclick="showSection('app3')">App 3</button>
+    <button onclick="showSection('app4')">App 4</button>
+    <button onclick="showSection('app5')">App 5</button>
+    <button onclick="showSection('app6')">App 6</button>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('contact')">Contact</button>
   </nav>
 
   <!-- Main -->
   <div class="main">
     <!-- Default intro -->
-    <div class="intro">
+    <div id="intro" class="intro active">
       <h1>John Newman,</h1>
       <h2>iOS Developer</h2>
       <div class="links">
-        <a href="mailto:John.newman920@icloud.com">Email</a>
-        <a href="https://github.com/5wift-Hacker" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/jnewmandev" target="_blank">LinkedIn</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+        <a href="#" onclick="showSection('about')">About</a>
       </div>
     </div>
 
-    <!-- About section -->
+    <!-- About -->
     <div id="about" class="content-section">
       <h2>About Me</h2>
       <p>
@@ -153,36 +140,50 @@
       </p>
     </div>
 
-    <!-- App sections -->
+    <!-- Contact -->
+    <div id="contact" class="content-section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:John.newman920@icloud.com">John.newman920@icloud.com</a></p>
+      <p>GitHub: <a href="https://github.com/5wift-Hacker" target="_blank">5wift-Hacker</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/jnewmandev" target="_blank">John Newman</a></p>
+    </div>
+
+    <!-- Apps -->
     <div id="app1" class="content-section">
       <h2>App 1</h2>
       <p>Description of App 1 goes here.</p>
     </div>
-
     <div id="app2" class="content-section">
       <h2>App 2</h2>
       <p>Description of App 2 goes here.</p>
     </div>
-
     <div id="app3" class="content-section">
       <h2>App 3</h2>
       <p>Description of App 3 goes here.</p>
     </div>
-
     <div id="app4" class="content-section">
       <h2>App 4</h2>
       <p>Description of App 4 goes here.</p>
     </div>
-
     <div id="app5" class="content-section">
       <h2>App 5</h2>
       <p>Description of App 5 goes here.</p>
     </div>
-
     <div id="app6" class="content-section">
       <h2>App 6</h2>
       <p>Description of App 6 goes here.</p>
     </div>
   </div>
+
+  <script>
+    function showSection(id) {
+      // hide all sections
+      document.querySelectorAll('.intro, .content-section').forEach(el => {
+        el.classList.remove('active');
+      });
+      // show selected
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
