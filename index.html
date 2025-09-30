@@ -1,189 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Newman Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      min-height: 100vh;
-      background: #f9f9f9;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      width: 200px;
-      background: #2c3e50;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      box-shadow: 2px 0 10px rgba(0,0,0,0.2);
-      z-index: 10;
-    }
-
-    .sidebar button {
-      background: #34495e;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 50px;
-      color: white;
-      text-align: center;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    }
-
-    .sidebar button:hover {
-      background: #1abc9c;
-      transform: translateX(5px);
-    }
-
-    /* Main area */
-    .main {
-      flex: 1;
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Intro page */
-    .intro {
-      font-family: Helvetica, sans-serif;
-      font-weight: bold;
-      text-align: left;
-      max-width: 600px;
-    }
-    .intro h1, .intro h2 {
-      margin: 0 0 15px;
-      font-size: 1.8rem; /* Same size for both */
-    }
-    .intro .links a {
-      display: inline-block;
-      margin: 5px 15px 5px 0;
-      text-decoration: none;
-      font-family: "Courier New", monospace;
-      font-size: 1rem;
-      color: #2c3e50;
-      border: 1px solid #2c3e50;
-      padding: 5px 15px;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-    }
-    .intro .links a:hover {
-      background: #2c3e50;
-      color: white;
-    }
-
-    /* Content sections */
-    .content-section {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 30px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      overflow-y: auto;
-    }
-
-    .content-section h2 {
-      margin-top: 0;
-    }
-
-    /* JS will handle showing/hiding */
-    .active {
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1173d4",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+    <style>
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .parallax-image {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: transform 0.3s ease-out;
+      }
+      .parallax-image:hover {
+        transform: scale(1.05);
+      }
+    </style>
 </head>
-<body>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex min-h-screen">
+<aside class="fixed flex h-full w-72 flex-col border-r border-gray-200/50 bg-background-light dark:border-gray-700/50 dark:bg-background-dark">
+<div class="p-8">
+<h1 class="text-2xl font-bold text-gray-900 dark:text-white">Ethan Carter</h1>
+<p class="text-sm text-gray-500 dark:text-gray-400">iOS Developer</p>
+</div>
+<nav class="flex-1 px-6">
+<ul class="space-y-2">
+<li>
+<a class="block rounded px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20" href="#about">About Me</a>
+</li>
+<li>
+<a class="block rounded px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20" href="#app1">App 1</a>
+</li>
+<li>
+<a class="block rounded px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20" href="#app2">App 2</a>
+</li>
+<li>
+<a class="block rounded px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20" href="#app3">App 3</a>
+</li>
+</ul>
+</nav>
+</aside>
+<main class="ml-72 flex-1 p-8">
+<div class="mx-auto max-w-4xl">
+<section class="mb-16 scroll-mt-24 fade-in-up" id="about">
+<h2 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">About Me</h2>
+<p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
+              I'm a passionate iOS developer with a focus on creating intuitive and engaging mobile experiences. With a background in computer science and a keen eye for design, I strive to build apps that are both functional and aesthetically pleasing. My portfolio showcases a range of projects, from utility apps to interactive games, each reflecting my commitment to quality and innovation.
+            </p>
+</section>
+<div class="space-y-24">
+<section class="scroll-mt-24 fade-in-up" id="app1">
+<h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">App 1</h2>
+<div class="mb-6 overflow-hidden rounded-lg">
+<div class="aspect-[16/9] w-full parallax-image bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBte6uY8DIn-9SxngAheuXo0TyjR7NVv9Rujks5U3Rr1LOLneB4JbhYTFHQJ1UeWEvzTDQUQNr8W6BKTArQSTLGEijZ2saQ2OuvbEXb6clf6htwutP5PvCduCrUQQ7bxZnilpRrWdzejR587UrxJVDpfer3ZmOFY75BCwkG4Rsv5jqjEZTycdpZvsOHiz1eRR814c7C6JEHU4ugV-XZTa-FXd8l_K4SlBphnsbd8USpilAB6UkzSqQwc35aRAHdjM7xf8QJvynTYBg");'></div>
+</div>
+<p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                App 1 is a productivity app designed to help users manage their daily tasks and stay organized. It features a clean and intuitive interface, allowing users to easily add, edit, and track their to-dos. The app also includes features such as reminders, recurring tasks, and the ability to categorize tasks by project or priority.
+              </p>
+</section>
+<section class="scroll-mt-24 fade-in-up" id="app2">
+<h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">App 2</h2>
+<div class="mb-6 overflow-hidden rounded-lg">
+<div class="aspect-[16/9] w-full parallax-image bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHkPV-uEVRYHIiaqAPnRMaSo8a5J0ol-vXZj71RMhzhTozgBFZhYi3EXwHA1ndBFtvta61WcNCmeizjVR6IEdQJ31L1NxpYcDD7oYrwj2iq8NG5W7ECb90bwT88Iz9qDNq_wJuOigFhZcMN7WYlU75Lqb6Cb61iSKqfShUpVIKAr-zY7hUhDgpCxySN7BFReQtkJH-IaO-bbs5At6qwNptcRkUTmWYPaizyXu5RYnVu4wgMdHyljYc-iauGbiRlUm2nn3TQYzipro");'></div>
+</div>
+<p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                App 2 is a fitness tracking app that helps users monitor their workouts and progress towards their fitness goals. The app offers a variety of features, including the ability to track different types of exercises, set goals, and view detailed statistics on performance. It also integrates with health data to provide a comprehensive overview of fitness activity.
+              </p>
+</section>
+<section class="scroll-mt-24 fade-in-up" id="app3">
+<h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">App 3</h2>
+<div class="mb-6 overflow-hidden rounded-lg">
+<div class="aspect-[16/9] w-full parallax-image bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-e7BPthqttArZBN2z45hBPnwHpOpw0Q8OuPVjLn7GJt45iyO3DYB4BcopJ1AIJS1EbhFbnUpQJWUrRBjr4unppbsjFs-gCfwmn-brs2FZNo6g2gDqFMI-N42O3mbNgo4GKbsDp6PE3D-1yOfMrLwA7LzzgzUqL77gfFRsXIXMtyVHhlrUrcSHyktPt3aBuRRDoiCrbSfGIZn3W0UGCLkytBG_W_kEo5_n5DyXw53t5Ld8hLfU7yTr3tDQiusqIQDvVnNT1URKEE8");'></div>
+</div>
+<p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                App 3 is a social networking app that connects users with shared interests and hobbies. The app allows users to create profiles, join groups, and participate in discussions. It also features a messaging system for direct communication and a news feed to keep users updated on the latest activities within their communities.
+              </p>
+</section>
+</div>
+</div>
+</main>
+</div>
 
-  <!-- Sidebar -->
-  <nav class="sidebar">
-    <button onclick="showSection('app1')">App 1</button>
-    <button onclick="showSection('app2')">App 2</button>
-    <button onclick="showSection('app3')">App 3</button>
-    <button onclick="showSection('app4')">App 4</button>
-    <button onclick="showSection('app5')">App 5</button>
-    <button onclick="showSection('app6')">App 6</button>
-    <button onclick="showSection('about')">About</button>
-    <button onclick="showSection('contact')">Contact</button>
-  </nav>
-
-  <!-- Main -->
-  <div class="main">
-    <!-- Default intro -->
-    <div id="intro" class="intro active">
-      <h1>John Newman,</h1>
-      <h2>iOS Developer</h2>
-      <div class="links">
-        <a href="#" onclick="showSection('contact')">Contact</a>
-        <a href="#" onclick="showSection('about')">About</a>
-      </div>
-    </div>
-
-    <!-- About -->
-    <div id="about" class="content-section">
-      <h2>About Me</h2>
-      <p>
-        I’m John Newman, an iOS developer passionate about building apps with Swift and SwiftUI. 
-        I love creating projects that balance clean design with practical functionality. 
-        This portfolio showcases some of my app work.
-      </p>
-    </div>
-
-    <!-- Contact -->
-    <div id="contact" class="content-section">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:John.newman920@icloud.com">John.newman920@icloud.com</a></p>
-      <p>GitHub: <a href="https://github.com/5wift-Hacker" target="_blank">5wift-Hacker</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/jnewmandev" target="_blank">John Newman</a></p>
-    </div>
-
-    <!-- Apps -->
-    <div id="app1" class="content-section">
-      <h2>App 1</h2>
-      <p>Description of App 1 goes here.</p>
-    </div>
-    <div id="app2" class="content-section">
-      <h2>App 2</h2>
-      <p>Description of App 2 goes here.</p>
-    </div>
-    <div id="app3" class="content-section">
-      <h2>App 3</h2>
-      <p>Description of App 3 goes here.</p>
-    </div>
-    <div id="app4" class="content-section">
-      <h2>App 4</h2>
-      <p>Description of App 4 goes here.</p>
-    </div>
-    <div id="app5" class="content-section">
-      <h2>App 5</h2>
-      <p>Description of App 5 goes here.</p>
-    </div>
-    <div id="app6" class="content-section">
-      <h2>App 6</h2>
-      <p>Description of App 6 goes here.</p>
-    </div>
-  </div>
-
-  <script>
-    function showSection(id) {
-      // hide all sections
-      document.querySelectorAll('.intro, .content-section').forEach(el => {
-        el.classList.remove('active');
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
       });
-      // show selected
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
+    }, {
+      threshold: 0.1
+    });
+
+    const fadeElements = document.querySelectorAll('.fade-in-up');
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>
 </body>
 </html>
