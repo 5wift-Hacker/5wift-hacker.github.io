@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>JNewmanDev</title>
+    <title>John Newman - iOS Developer</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         darkMode: "class",
@@ -22,116 +22,217 @@
             fontFamily: {
               display: ["Inter"],
             },
-            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
           },
         },
       };
     </script>
     <style>
-      .fade-in-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      .page-content {
+        display: none;
       }
-      .fade-in-up.visible {
-        opacity: 1;
-        transform: translateY(0);
+      .page-content.active {
+        display: block;
       }
-      .parallax-image {
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        transition: transform 0.3s ease-out;
-      }
-      .parallax-image:hover {
-        transform: scale(1.05);
+      .nav-link.active {
+        background-color: rgba(17, 115, 212, 0.1);
+        color: #1173d4;
       }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
 <div class="flex min-h-screen">
-<aside class="fixed flex h-full w-72 flex-col border-r border-gray-200/50 bg-background-light dark:border-gray-700/50 dark:bg-background-dark">
-<div class="p-8">
-<h1 class="text-2xl font-bold text-gray-900 dark:text-white">my Work</h1>
-</div>
-<nav class="flex-1 px-6">
-<ul class="space-y-2">
-<li>
-<a class="block rounded px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20" style="font-family: Helvetica, sans-serif;" href="#about">About</a>
-</li>
-<li>
-<a class="block rounded px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20" style="font-family: Helvetica, sans-serif;" href="#app1">Showcase 1</a>
-</li>
-<li>
-<a class="block rounded px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20" style="font-family: Helvetica, sans-serif;" href="#app2">Showcase 2</a>
-</li>
-<li>
-<a class="block rounded px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20" style="font-family: Helvetica, sans-serif;" href="#app3">Showcase 3</a>
-</li>
-</ul>
-</nav>
-</aside>
-<main class="ml-72 flex-1 p-8">
-<div class="mx-auto max-w-4xl">
-<section class="mb-16 scroll-mt-24 fade-in-up" id="about">
-<h2 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">John Newman, <span style="color: blue;">iOS Developer</span></h2>
-<p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
-              I'm a passionate iOS developer with a focus on creating intuitive and engaging mobile experiences. I strive to build apps that are both functional and aesthetically pleasing. My portfolio showcases a range of projects, each reflecting my commitment to both functional and visual quality, as well as innovation.
+  <!-- Sidebar Navigation -->
+  <aside class="fixed flex h-full w-72 flex-col border-r border-gray-200/50 bg-background-light dark:border-gray-700/50 dark:bg-background-dark">
+    <div class="p-8">
+      <h1 class="text-2xl font-bold text-gray-900 dark:text-white">John Newman</h1>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">iOS Developer</p>
+    </div>
+    <nav class="flex-1 px-6">
+      <ul class="space-y-2">
+        <li>
+          <a class="nav-link block rounded px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20 cursor-pointer" data-page="app">Etsy Tracker</a>
+        </li>
+        <li>
+          <a class="nav-link block rounded px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20 cursor-pointer" data-page="contact">User Support</a>
+        </li>
+        <li>
+          <a class="nav-link block rounded px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 dark:text-gray-300 dark:hover:bg-primary/20 cursor-pointer" data-page="privacy">Privacy Policy</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="ml-72 flex-1 p-8">
+    <div class="mx-auto max-w-4xl">
+      
+      <!-- Etsy Tracker Page -->
+      <div id="app-page" class="page-content active">
+        <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">Etsy Tracker</h2>
+        
+        <div class="mb-8">
+          <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-400 mb-4">
+            Calculate your potential Etsy profit with a SINGLE button! Just add your products' sale price & costs.
+          </p>
+          <p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
+            More updates to come. Watch this space.
+          </p>
+        </div>
+      </div>
+
+      <!-- User Support Page -->
+      <div id="contact-page" class="page-content">
+        <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">User Support</h2>
+        
+        <div class="mb-8">
+          <h3 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white">About Me</h3>
+          <p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
+            I'm a passionate iOS developer with a focus on creating intuitive and engaging mobile experiences. I strive to build apps that are both functional and aesthetically pleasing. My portfolio showcases a range of projects, each reflecting my commitment to both functional and visual quality, as well as innovation.
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <h3 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Get In Touch</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-24 text-sm font-medium text-gray-700 dark:text-gray-300">Email:</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <a href="mailto:John.newman920@icloud.com" class="text-primary hover:underline">John.newman920@icloud.com</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-24 text-sm font-medium text-gray-700 dark:text-gray-300">GitHub:</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <a href="https://github.com/5wift-Hacker" target="_blank" class="text-primary hover:underline">github.com/5wift-Hacker</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-24 text-sm font-medium text-gray-700 dark:text-gray-300">LinkedIn:</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <a href="https://www.linkedin.com/in/jnewmandev/" target="_blank" class="text-primary hover:underline">linkedin.com/in/jnewmandev</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Privacy Policy Page -->
+      <div id="privacy-page" class="page-content">
+        <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">Privacy Policy</h2>
+        
+        <div class="space-y-6 text-gray-600 dark:text-gray-400">
+          <p class="text-sm text-gray-500 dark:text-gray-500">Last updated: December 12, 2025</p>
+          
+          <div>
+            <h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Introduction</h3>
+            <p class="leading-relaxed">
+              This privacy policy describes how the Etsy Tracker app ("we", "our", or "us") handles your information. We are committed to protecting your privacy and being transparent about our data practices.
             </p>
-</section>
-<div class="space-y-24">
-<section class="scroll-mt-24 fade-in-up" id="app1">
-<h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">App 1</h2>
-<div class="mb-6 overflow-hidden rounded-lg">
-<div class="aspect-[16/9] w-full parallax-image bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBte6uY8DIn-9SxngAheuXo0TyjR7NVv9Rujks5U3Rr1LOLneB4JbhYTFHQJ1UeWEvzTDQUQNr8W6BKTArQSTLGEijZ2saQ2OuvbEXb6clf6htwutP5PvCduCrUQQ7bxZnilpRrWdzejR587UrxJVDpfer3ZmOFY75BCwkG4Rsv5jqjEZTycdpZvsOHiz1eRR814c7C6JEHU4ugV-XZTa-FXd8l_K4SlBphnsbd8USpilAB6UkzSqQwc35aRAHdjM7xf8QJvynTYBg");'></div>
-</div>
-<p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
-                App 1 is a productivity app designed to help users manage their daily tasks and stay organized. It features a clean and intuitive interface, allowing users to easily add, edit, and track their to-dos. The app also includes features such as reminders, recurring tasks, and the ability to categorize tasks by project or priority.
-              </p>
-</section>
-<section class="scroll-mt-24 fade-in-up" id="app2">
-<h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">App 2</h2>
-<div class="mb-6 overflow-hidden rounded-lg">
-<div class="aspect-[16/9] w-full parallax-image bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHkPV-uEVRYHIiaqAPnRMaSo8a5J0ol-vXZj71RMhzhTozgBFZhYi3EXwHA1ndBFtvta61WcNCmeizjVR6IEdQJ31L1NxpYcDD7oYrwj2iq8NG5W7ECb90bwT88Iz9qDNq_wJuOigFhZcMN7WYlU75Lqb6Cb61iSKqfShUpVIKAr-zY7hUhDgpCxySN7BFReQtkJH-IaO-bbs5At6qwNptcRkUTmWYPaizyXu5RYnVu4wgMdHyljYc-iauGbiRlUm2nn3TQYzipro");'></div>
-</div>
-<p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
-                App 2 is a fitness tracking app that helps users monitor their workouts and progress towards their fitness goals. The app offers a variety of features, including the ability to track different types of exercises, set goals, and view detailed statistics on performance. It also integrates with health data to provide a comprehensive overview of fitness activity.
-              </p>
-</section>
-<section class="scroll-mt-24 fade-in-up" id="app3">
-<h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">App 3</h2>
-<div class="mb-6 overflow-hidden rounded-lg">
-<div class="aspect-[16/9] w-full parallax-image bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-e7BPthqttArZBN2z45hBPnwHpOpw0Q8OuPVjLn7GJt45iyO3DYB4BcopJ1AIJS1EbhFbnUpQJWUrRBjr4unppbsjFs-gCfwmn-brs2FZNo6g2gDqFMI-N42O3mbNgo4GKbsDp6PE3D-1yOfMrLwA7LzzgzUqL77gfFRsXIXMtyVHhlrUrcSHyktPt3aBuRRDoiCrbSfGIZn3W0UGCLkytBG_W_kEo5_n5DyXw53t5Ld8hLfU7yTr3tDQiusqIQDvVnNT1URKEE8");'></div>
-</div>
-<p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
-                App 3 is a social networking app that connects users with shared interests and hobbies. The app allows users to create profiles, join groups, and participate in discussions. It also features a messaging system for direct communication and a news feed to keep users updated on the latest activities within their communities.
-              </p>
-</section>
-</div>
-</div>
-</main>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Data Collection</h3>
+            <p class="leading-relaxed mb-3">
+              <strong>We do not collect, store, or transmit any personal data.</strong>
+            </p>
+            <p class="leading-relaxed">
+              The Etsy Tracker is designed to work entirely on your device. All calculations you perform and any data you enter remain solely on your device and are never sent to us or any third party. We have no access to your information.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Information We Do NOT Collect</h3>
+            <p class="leading-relaxed mb-2">
+              We do not collect:
+            </p>
+            <ul class="list-disc list-inside space-y-1 ml-4">
+              <li>Personal identification information</li>
+              <li>Financial data or calculations you enter</li>
+              <li>Usage data or analytics</li>
+              <li>Device information</li>
+              <li>Location data</li>
+              <li>Any other personal information</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Data Storage</h3>
+            <p class="leading-relaxed">
+              The Etsy Tracker does not store any data you enter. All calculations are performed in real-time and are not saved to your device or anywhere else. Once you close the app or navigate away, your entered data is cleared.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">App Store Analytics</h3>
+            <p class="leading-relaxed">
+              We use Apple's App Store Analytics to understand basic usage patterns such as app downloads, sessions, and crashes. This data is collected and managed entirely by Apple and is provided to us in an aggregated, anonymized format. We cannot identify individual users from this information. For more details on how Apple handles this data, please refer to Apple's Privacy Policy.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Third-Party Services</h3>
+            <p class="leading-relaxed">
+              Apart from Apple's App Store Analytics mentioned above, we do not use any other third-party analytics, advertising, or tracking services.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Future Updates</h3>
+            <p class="leading-relaxed">
+              We plan to add in-app purchase functionality in future updates. If this changes our data collection practices, we will update this privacy policy and notify users accordingly before implementing any data collection.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Children's Privacy</h3>
+            <p class="leading-relaxed">
+              Our service is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Changes to This Privacy Policy</h3>
+            <p class="leading-relaxed">
+              We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the "Last updated" date.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Contact Us</h3>
+            <p class="leading-relaxed">
+              If you have any questions about this privacy policy, please contact us at: <a href="mailto:John.newman920@icloud.com" class="text-primary hover:underline">John.newman920@icloud.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
 </div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pages = document.querySelectorAll('.page-content');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const pageId = this.getAttribute('data-page') + '-page';
+        
+        // Remove active class from all nav links and pages
+        navLinks.forEach(l => l.classList.remove('active'));
+        pages.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to clicked nav link and corresponding page
+        this.classList.add('active');
+        document.getElementById(pageId).classList.add('active');
       });
-    }, {
-      threshold: 0.1
     });
 
-    const fadeElements = document.querySelectorAll('.fade-in-up');
-    fadeElements.forEach(el => observer.observe(el));
+    // Set Etsy Tracker as default active page
+    navLinks[0].classList.add('active');
   });
 </script>
 </body>
 </html>
-
-
-
