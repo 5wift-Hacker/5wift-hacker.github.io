@@ -37,6 +37,19 @@
         background-color: rgba(17, 115, 212, 0.1);
         color: #1173d4;
       }
+      .bg-image {
+        background-image: url('pic03.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      .content-overlay {
+        background-color: rgba(246, 247, 248, 0.95);
+      }
+      .dark .content-overlay {
+        background-color: rgba(16, 25, 34, 0.95);
+      }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
@@ -64,7 +77,7 @@
 
   <!-- Main Content Area -->
   <main class="ml-72 flex-1 p-8">
-    <div class="mx-auto max-w-4xl">
+    <div class="mx-auto max-w-4xl content-overlay rounded-lg p-8 shadow-lg">
       
       <!-- Etsy Tracker Page -->
       <div id="app-page" class="page-content active">
