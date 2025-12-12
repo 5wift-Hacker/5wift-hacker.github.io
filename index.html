@@ -1,43 +1,39 @@
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>John Newman - iOS Developer</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-darkMode: "class",
-theme: {
-extend: {
-colors: {
-primary: "#1173d4",
-"background-light": "#f6f7f8",
-"background-dark": "#101922",
-},
-fontFamily: {
-display: ["Inter"],
-},
-},
-},
-};
-</script>
-<style>
-.page-content {
-display: none;
-}
-.page-content.active {
-display: block;
-}
-.nav-link.active {
-        background-color: rgba(0, 0, 0, 0.2);
-        font-weight: 600;
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>John Newman - iOS Developer</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1173d4",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .page-content {
+        display: none;
+      }
+      .page-content.active {
+        display: block;
+      }
+      .nav-link.active {
         background-color: #9E9E9E;
         color: #1173d4;
       }
@@ -47,134 +43,83 @@ display: block;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
-}
-.content-overlay {
-background-color: #8B7D6B;
-color: #000000;
-}
-body {
-background-color: #2d2d2d !important;
-}
-</style>
-head>
-<body class="font-display text-gray-800">
-
+      }
+      .content-overlay {
+        background-color: #8B7D6B;
+        color: #000000;
+      }
+      body {
+        background-color: #2d2d2d !important;
+      }
+    </style>
 </head>
 <body class="font-display text-gray-800" style="background-color: #2d2d2d;">
 <div class="flex min-h-screen">
-
-  <!-- Sidebar Navigation - now same taupe as content -->
-  <aside class="fixed flex h-full w-72 flex-col border-r border-black/20 bg-[#8B7D6B] text-black">
-    <div class="p-8">
-      <h1 class="text-2xl font-bold">John Newmanh1>
-      <p class="text-sm opacity-90 mt-1">iOS Developerp>
-    div>
 <aside class="fixed flex h-full w-72 flex-col border-r backdrop-blur-sm" style="background-color: #8B7D6B; border-color: rgba(100, 100, 100, 0.3);">
 <div class="p-8">
 <h1 class="text-2xl font-bold" style="color: #000000;">John Newman</h1>
 <p class="text-sm mt-1" style="color: #333333;">iOS Developer</p>
 </div>
-<nav class="flex-1 px-6">
-<ul class="space-y-2">
-<li>
-          <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10 active:bg-black/20 transition-colors" data-page="app">Etsy Trackera>
-        li>
+    <nav class="flex-1 px-6">
+      <ul class="space-y-2">
+        <li>
           <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10" style="color: #000000;" data-page="app">Etsy Tracker</a>
         </li>
-<li>
-          <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10 active:bg-black/20 transition-colors" data-page="contact">User Supporta>
-        li>
+        <li>
           <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10" style="color: #000000;" data-page="contact">User Support</a>
         </li>
-<li>
-          <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10 active:bg-black/20 transition-colors" data-page="privacy">Privacy Policya>
-        li>
-      ul>
-    nav>
-  aside>
+        <li>
           <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10" style="color: #000000;" data-page="privacy">Privacy Policy</a>
         </li>
       </ul>
     </nav>
 </aside>
 
-<!-- Main Content Area -->
-<main class="ml-72 flex-1 p-8">
-<div class="mx-auto max-w-4xl content-overlay rounded-lg p-8" style="box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.8);">
-
+  <!-- Main Content Area -->
+  <main class="ml-72 flex-1 p-8">
+    <div class="mx-auto max-w-4xl content-overlay rounded-lg p-8" style="box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.8);">
       
-<!-- Etsy Tracker Page -->
-<div id="app-page" class="page-content active">
-        <h2 class="mb-6 text-3xl font-bold">Etsy Trackerh2>
+      <!-- Etsy Tracker Page -->
+      <div id="app-page" class="page-content active">
         <h2 class="mb-6 text-3xl font-bold" style="color: #000000;">Etsy Tracker</h2>
         
-<div class="mb-8">
-          <p class="text-lg leading-relaxed mb-4">
+        <div class="mb-8">
           <p class="text-lg leading-relaxed mb-4" style="color: #000000;">
-Calculate your potential Etsy profit with a SINGLE button! Just add your products' sale price & costs.
-          p>
-          <p class="text-base leading-relaxed">
+            Calculate your potential Etsy profit with a SINGLE button! Just add your products' sale price & costs.
           </p>
           <p class="text-base leading-relaxed" style="color: #000000;">
-More updates to come. Watch this space.
-          p>
-        div>
-      div>
+            More updates to come. Watch this space.
           </p>
         </div>
       </div>
 
-<!-- User Support Page -->
-<div id="contact-page" class="page-content">
-        <h2 class="mb-6 text-3xl font-bold">User Supporth2>
+      <!-- User Support Page -->
+      <div id="contact-page" class="page-content">
         <h2 class="mb-6 text-3xl font-bold" style="color: #000000;">User Support</h2>
         
-<div class="mb-8">
-          <h3 class="mb-4 text-xl font-semibold">About Meh3>
-          <p class="text-base leading-relaxed">
+        <div class="mb-8">
           <h3 class="mb-4 text-xl font-semibold" style="color: #000000;">About Me</h3>
           <p class="text-base leading-relaxed" style="color: #000000;">
-I'm a passionate iOS developer with a focus on creating intuitive and engaging mobile experiences. I strive to build apps that are both functional and aesthetically pleasing. My portfolio showcases a range of projects, each reflecting my commitment to both functional and visual quality, as well as innovation.
-          p>
-        div>
+            I'm a passionate iOS developer with a focus on creating intuitive and engaging mobile experiences. I strive to build apps that are both functional and aesthetically pleasing. My portfolio showcases a range of projects, each reflecting my commitment to both functional and visual quality, as well as innovation.
           </p>
         </div>
 
-<div class="mb-8">
-          <h3 class="mb-4 text-xl font-semibold">Get In Touchh3>
+        <div class="mb-8">
           <h3 class="mb-4 text-xl font-semibold" style="color: #000000;">Get In Touch</h3>
-<div class="space-y-4">
-<div class="flex items-start">
-              <div class="flex-shrink-0 w-24 text-sm font-medium">Email:div>
-              <div>
-                <a href="mailto:John.newman920@icloud.com" class="text-primary hover:underline font-medium">John.newman920@icloud.coma>
-              div>
-            div>
+          <div class="space-y-4">
+            <div class="flex items-start">
               <div class="flex-shrink-0 w-24 text-sm font-medium" style="color: #000000;">Email:</div>
               <div style="color: #000000;">
                 <a href="mailto:John.newman920@icloud.com" class="text-primary hover:underline">John.newman920@icloud.com</a>
               </div>
             </div>
-<div class="flex items-start">
-              <div class="flex-shrink-0 w-24 text-sm font-medium">GitHub:div>
-              <div>
-                <a href="https://github.com/5wift-Hacker" target="_blank" class="text-primary hover:underline font-medium">github.com/5wift-Hackera>
-              div>
-            div>
+            <div class="flex items-start">
               <div class="flex-shrink-0 w-24 text-sm font-medium" style="color: #000000;">GitHub:</div>
               <div style="color: #000000;">
                 <a href="https://github.com/5wift-Hacker" target="_blank" class="text-primary hover:underline">github.com/5wift-Hacker</a>
               </div>
             </div>
-<div class="flex items-start">
-              <div class="flex-shrink-0 w-24 text-sm font-medium">LinkedIn:div>
-              <div>
-                <a href="https://www.linkedin.com/in/jnewmandev/" target="_blank" class="text-primary hover:underline font-medium">linkedin.com/in/jnewmandeva>
-              div>
-            div>
-          div>
-        div>
-      div>
+            <div class="flex items-start">
               <div class="flex-shrink-0 w-24 text-sm font-medium" style="color: #000000;">LinkedIn:</div>
               <div style="color: #000000;">
                 <a href="https://www.linkedin.com/in/jnewmandev/" target="_blank" class="text-primary hover:underline">linkedin.com/in/jnewmandev</a>
@@ -184,44 +129,30 @@ I'm a passionate iOS developer with a focus on creating intuitive and engaging m
         </div>
       </div>
 
-<!-- Privacy Policy Page -->
-<div id="privacy-page" class="page-content">
-        <h2 class="mb-6 text-3xl font-bold">Privacy Policyh2>
-        <div class="space-y-6 text-black">
-          <p class="text-sm mb-4 opacity-75">Last updated: December 12, 2025p>
-
+      <!-- Privacy Policy Page -->
+      <div id="privacy-page" class="page-content">
         <h2 class="mb-6 text-3xl font-bold" style="color: #000000;">Privacy Policy</h2>
         
         <div class="space-y-6" style="color: #000000;">
           <p class="text-sm mb-4" style="color: #333333;">Last updated: December 12, 2025</p>
           
-<div>
-            <h3 class="mb-3 text-lg font-semibold">Introductionh3>
+          <div>
             <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Introduction</h3>
-<p class="leading-relaxed">
-This privacy policy describes how the Etsy Tracker app ("we", "our", or "us") handles your information. We are committed to protecting your privacy and being transparent about our data practices.
-            p>
-          div>
+            <p class="leading-relaxed">
+              This privacy policy describes how the Etsy Tracker app ("we", "our", or "us") handles your information. We are committed to protecting your privacy and being transparent about our data practices.
             </p>
           </div>
 
-<div>
-            <h3 class="mb-3 text-lg font-semibold">Data Collectionh3>
-            <p class="leading-relaxed mb-3 font-semibold">
-              We do not collect, store, or transmit any personal data.
-            p>
+          <div>
             <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Data Collection</h3>
             <p class="leading-relaxed mb-3">
               <strong>We do not collect, store, or transmit any personal data.</strong>
             </p>
-<p class="leading-relaxed">
-The Etsy Tracker is designed to work entirely on your device. All calculations you perform and any data you enter remain solely on your device and are never sent to us or any third party. We have no access to your information.
-            p>
-          div>
+            <p class="leading-relaxed">
+              The Etsy Tracker is designed to work entirely on your device. All calculations you perform and any data you enter remain solely on your device and are never sent to us or any third party. We have no access to your information.
             </p>
           </div>
 
-          <!-- (rest of privacy content unchanged for brevity - it's exactly the same as your original) -->
           <div>
             <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Information We Do NOT Collect</h3>
             <p class="leading-relaxed mb-2">
@@ -244,23 +175,13 @@ The Etsy Tracker is designed to work entirely on your device. All calculations y
             </p>
           </div>
 
-<div>
-            <h3 class="mb-3 text-lg font-semibold">Contact Ush3>
+          <div>
             <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">App Store Analytics</h3>
-<p class="leading-relaxed">
-              If you have any questions about this privacy policy, please contact us at:
-              <a href="mailto:John.newman920@icloud.com" class="text-primary hover:underline font-medium">John.newman920@icloud.coma>
-            p>
-          div>
-        div>
-      div>
+            <p class="leading-relaxed">
               We use Apple's App Store Analytics to understand basic usage patterns such as app downloads, sessions, and crashes. This data is collected and managed entirely by Apple and is provided to us in an aggregated, anonymized format. We cannot identify individual users from this information. For more details on how Apple handles this data, please refer to Apple's Privacy Policy.
             </p>
           </div>
 
-    div>
-  main>
-div>
           <div>
             <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Third-Party Services</h3>
             <p class="leading-relaxed">
@@ -303,36 +224,28 @@ div>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-const navLinks = document.querySelectorAll('.nav-link');
-const pages = document.querySelectorAll('.page-content');
+  document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pages = document.querySelectorAll('.page-content');
 
-navLinks.forEach(link => {
-link.addEventListener('click', function(e) {
-e.preventDefault();
-const pageId = this.getAttribute('data-page') + '-page';
-
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const pageId = this.getAttribute('data-page') + '-page';
         
         // Remove active class from all nav links and pages
-navLinks.forEach(l => l.classList.remove('active'));
-pages.forEach(p => p.classList.remove('active'));
-
+        navLinks.forEach(l => l.classList.remove('active'));
+        pages.forEach(p => p.classList.remove('active'));
         
         // Add active class to clicked nav link and corresponding page
-this.classList.add('active');
-document.getElementById(pageId).classList.add('active');
-});
-});
+        this.classList.add('active');
+        document.getElementById(pageId).classList.add('active');
+      });
+    });
 
-    // Default active tab
-    document.querySelector('[data-page="app"]').classList.add('active');
     // Set Etsy Tracker as default active page
     navLinks[0].classList.add('active');
-});
-script>
+  });
 </script>
 </body>
 </html>
-```
-
-Just copy and paste the entire code above — the sidebar now perfectly matches the taupe background of your content cards in both light and dark mode. Enjoy the clean, cohesive look!
