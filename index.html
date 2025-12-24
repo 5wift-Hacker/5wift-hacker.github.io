@@ -63,13 +63,16 @@
     <nav class="flex-1 px-6">
       <ul class="space-y-2">
         <li>
-          <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10" style="color: #000000;" data-page="app">mohka</a>
+          <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10" style="color: #000000;" data-page="home">Home</a>
         </li>
         <li>
           <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10" style="color: #000000;" data-page="contact">User Support</a>
         </li>
         <li>
-          <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10" style="color: #000000;" data-page="privacy">Privacy Policy</a>
+          <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10" style="color: #000000;" data-page="privacy-mohka">Privacy Policy: mohka</a>
+        </li>
+        <li>
+          <a class="nav-link block rounded px-4 py-2 text-sm font-medium cursor-pointer hover:bg-black/10" style="color: #000000;" data-page="privacy-relationship">Privacy Policy: relationship boss</a>
         </li>
       </ul>
     </nav>
@@ -79,17 +82,31 @@
   <main class="ml-72 flex-1 p-8">
     <div class="mx-auto max-w-4xl content-overlay rounded-lg p-8" style="box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.8);">
       
-      <!-- Etsy Tracker Page -->
-      <div id="app-page" class="page-content active">
-        <h2 class="mb-6 text-3xl font-bold" style="color: #000000;">mohka</h2>
+      <!-- Home Page -->
+      <div id="home-page" class="page-content active">
+        <h2 class="mb-6 text-3xl font-bold" style="color: #000000;">John Newman</h2>
         
         <div class="mb-8">
+          <h3 class="mb-4 text-xl font-semibold" style="color: #000000;">iOS Developer</h3>
           <p class="text-lg leading-relaxed mb-4" style="color: #000000;">
-            Calculate your potential Etsy profit with a SINGLE button! Just add your products' sale price & costs.
+            Welcome! I'm a passionate iOS developer with a focus on creating intuitive and engaging mobile experiences. I strive to build apps that are both functional and aesthetically pleasing.
           </p>
-          <p class="text-base leading-relaxed" style="color: #000000;">
-            More updates to come. Watch this space.
-          </p>
+          
+          <h3 class="mb-4 text-xl font-semibold mt-8" style="color: #000000;">My Apps</h3>
+          
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-semibold" style="color: #000000;">mohka</h4>
+            <p class="text-base leading-relaxed" style="color: #000000;">
+              Calculate your potential Etsy profit with a SINGLE button! Just add your products' sale price & costs. More updates to come. Watch this space.
+            </p>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-semibold" style="color: #000000;">relationship boss</h4>
+            <p class="text-base leading-relaxed" style="color: #000000;">
+              A relationship management app to help you stay connected with the people who matter most.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -129,8 +146,8 @@
         </div>
       </div>
 
-      <!-- Privacy Policy Page -->
-      <div id="privacy-page" class="page-content">
+      <!-- Privacy Policy Page - mohka -->
+      <div id="privacy-mohka-page" class="page-content">
         <h2 class="mb-6 text-3xl font-bold" style="color: #000000;">Privacy Policy for mohka</h2>
         
         <div class="space-y-6" style="color: #000000;">
@@ -218,10 +235,118 @@
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <p class="leading-relaxed mb-3">
-              </strong> <a href="mailto:john.newman920@icloud.com" class="text-primary hover:underline">john.newman920@icloud.com</a>
+              <a href="mailto:john.newman920@icloud.com" class="text-primary hover:underline">john.newman920@icloud.com</a>
             </p>
             <p class="leading-relaxed font-semibold">
               Thank you for enjoying mohka!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Privacy Policy Page - relationship boss -->
+      <div id="privacy-relationship-page" class="page-content">
+        <h2 class="mb-6 text-3xl font-bold" style="color: #000000;">Privacy Policy for relationship boss</h2>
+        
+        <div class="space-y-6" style="color: #000000;">
+          <p class="text-sm mb-4" style="color: #333333;">Last updated: December 24, 2025</p>
+          
+          <div>
+            <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Introduction</h3>
+            <p class="leading-relaxed">
+              This Privacy Policy explains how relationship boss ("we," "our," or "us") handles your information. We are committed to protecting your privacy and being fully transparent about our data practices.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Data Storage</h3>
+            <p class="leading-relaxed mb-3">
+              relationship boss stores data locally on your device using Apple's SwiftData framework. All information you enter—including contacts, relationships, notes, and any other data—is stored exclusively on your device and is never transmitted to our servers or any third party.
+            </p>
+            <p class="leading-relaxed">
+              This means your data remains completely private and under your control at all times.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Data We Do NOT Collect</h3>
+            <p class="leading-relaxed mb-3">
+              While the app stores your data locally on your device, we do not collect, transmit, or have access to any of your personal data. Specifically, we do not collect:
+            </p>
+            <ul class="list-disc list-inside space-y-1 ml-4">
+              <li>Personal identification information</li>
+              <li>Contact information or relationship data you enter</li>
+              <li>Usage data or analytics (except Apple's anonymized App Store Analytics — see below)</li>
+              <li>Device identifiers, IP addresses, or advertising IDs</li>
+              <li>Location data</li>
+              <li>Any other personal or sensitive information</li>
+            </ul>
+            <p class="leading-relaxed mt-3">
+              All data you enter stays only on your device and is never sent to us or any third party.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Data Retention</h3>
+            <p class="leading-relaxed mb-3">
+              Your data is stored on your device using SwiftData and persists until you choose to delete it within the app or uninstall the app. We have no access to this data and cannot retrieve or delete it on your behalf.
+            </p>
+            <p class="leading-relaxed">
+              Since no data ever leaves your device, there is nothing for us to retain or manage remotely.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Data Use & Consent</h3>
+            <p class="leading-relaxed">
+              Since we collect no data and all information stays on your device, we do not use any data and no user consent is required for data transmission or sharing.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">App Store Analytics (Apple-provided)</h3>
+            <p class="leading-relaxed mb-3">
+              We use only Apple's built-in App Store Analytics to see aggregated and anonymized information such as total app downloads, crashes, and sessions. This data is collected and processed solely by Apple. We cannot identify individual users, and Apple provides the same or higher level of privacy protection described in this policy.
+            </p>
+            <p class="leading-relaxed mb-3">
+              For details, see Apple's Privacy Policy: <a href="https://www.apple.com/legal/privacy/" target="_blank" class="text-primary hover:underline">https://www.apple.com/legal/privacy/</a>
+            </p>
+            <p class="leading-relaxed">
+              We do not use any other third-party analytics, advertising, tracking, or SDKs.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Third-Party Services</h3>
+            <p class="leading-relaxed mb-3">
+              Currently, the only third-party service involved is Apple (via App Store distribution, App Store Analytics, and the SwiftData framework). We confirm that Apple offers privacy protections that meet or exceed those stated in this policy.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Children's Privacy</h3>
+            <p class="leading-relaxed">
+              relationship boss is not directed to children under 13 years of age, and we do not knowingly collect personal information from children under 13.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Changes to This Privacy Policy</h3>
+            <p class="leading-relaxed">
+              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last updated" date. If future updates involve any data collection or transmission, we will provide prominent notice inside the app and obtain your consent where required.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold" style="color: #000000;">Contact Us</h3>
+            <p class="leading-relaxed mb-3">
+              If you have any questions about this Privacy Policy, please contact us at:
+            </p>
+            <p class="leading-relaxed mb-3">
+              <a href="mailto:john.newman920@icloud.com" class="text-primary hover:underline">john.newman920@icloud.com</a>
+            </p>
+            <p class="leading-relaxed font-semibold">
+              Thank you for enjoying relationship boss!
             </p>
           </div>
         </div>
@@ -251,14 +376,9 @@
       });
     });
 
-    // Set Etsy Tracker as default active page
+    // Set Home as default active page
     navLinks[0].classList.add('active');
   });
 </script>
 </body>
 </html>
-
-
-
-
-
